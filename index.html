@@ -14,44 +14,21 @@
   </header>
   
   <main>
-    <skeleton-loader class="toast toast-error skeleton"></skeleton-loader>
-    <br><br>
     <div class="toast toast-error">
       <h6>Disclaimer</h6>
       <p>This website is in construction, please don't use this website until this disclaimer is gone.</p>
     </div>
     
     <center>
-      <h1>Lootl</h1>
+      <br>
+      <div id="create-user">
+        <h1>We see you haven't created a user yet!</h1>
+        <p>That's okay, but you need it to play. Create one:</p>
+        <div class="viewer-360">
+          <input class="viewer-slider slider" type="range" min="1" max="4" value="1" oninput="this.setAttribute('value', this.value);">
+          <figure class="viewer-image" style="background-image:url('http://lootl.ml/img/3D.jpg');"></figure>
+        </div>
+      </div>
     </center>
   </main>
 </body>
-<style>
-  .skeleton {
-    box-shadow: 0 4px 10px 0 rgba(33, 33, 33, 0.15);
-    border-radius: 4px;
-    position: relative;
-    overflow: hidden; 
-  }
-  
-  skeleton-loading::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: -150px;
-    top: 0;
-    height: 100%;
-    width: 150px;
-    background: linear-gradient(to right, transparent 0%, #E8E8E8 50%, transparent 100%);
-    animation: load-skeleton 1s cubic-bezier(0.4, 0.0, 0.2, 1);
-  }
-  
-  @keyframes load-skeleton {
-    from {
-      left: -150px;
-    }
-    to   {
-      left: 100%;
-    }
-  }
-</style>

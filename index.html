@@ -74,7 +74,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-primary" style="background: #32b643; border-color: #32b643;">OK, create</button>
+          <button class="btn btn-primary" style="background: #32b643; border-color: #32b643;" onclick="modal_user_creation_create();">OK, create</button>
           <a class="btn btn-link" style="color: #e85600;" href="#close">Cancel</a>
         </div>
       </div>
@@ -115,5 +115,24 @@
     location.href = "https://lootl.ml#modal-user-creation";
     document.getElementById("modal-user-creation-avatar").src = document.getElementById("create-user-avatar").value;
     document.getElementById("modal-user-creation-username").innerHTML = document.getElementById("create-user-username").value;
+  }
+  
+  function modal_user_creation_create(){
+    location.href = "https://lootl.ml#close";
+    localStorage.setItem("username", document.getElementById("create-user-avatar").value);
+    localStorage.setItem("avatar", document.getElementById("create-user-username").value);
+    location.reload();
+  }
+  
+  document.addEventListener("DOMContentLoaded", function(){
+    if (localStorage.getItem("username") && localStorage.getItem("avatar")){
+      document.getElementById("navbar-username").innerHTML = localStorage.getItem("username");
+      document.getElementById("navbar-avatar").src = localStorage.getItem("avatar");
+      document.getElementById("navbar-menu-username").innerHTML = localStorage.getItem("username");
+      document.getElementById("navbar-menu-avatar").src = localStorage.getItem("avatar");
+      document.getElementById("create-user").remove();
+    } else {
+      document.getElementById("navbar-user").remove();
+    }
   }
 </script>

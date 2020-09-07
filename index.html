@@ -87,7 +87,7 @@
       <div class="container">
         <div class="columns">
           <div class="column col-12">
-            <div class="empty" id="create-user">
+            <div class="empty" id="start-earning-money">
               <div class="empty-icon">
                 <i class="icon icon-3x icon-emoji"></i>
               </div>
@@ -124,6 +124,7 @@
             </div>
           </div>
         </div>
+        </div>
       </div>
     </center>
   </main>
@@ -144,6 +145,7 @@
   
   document.addEventListener("DOMContentLoaded", function(){
     if (localStorage.getItem("username") && localStorage.getItem("avatar")){
+      document.getElementById("start-earning-money").remove();
       document.getElementById("navbar-username").innerHTML = localStorage.getItem("username");
       document.getElementById("navbar-avatar").src = localStorage.getItem("avatar");
       document.getElementById("navbar-menu-username").innerHTML = localStorage.getItem("username");
@@ -155,6 +157,9 @@
     
     if (localStorage.getItem("money")){
       document.getElementById("navbar-menu-money").innerHTML = localStorage.getItem("money");
+      if (localStorage.getItem("money") != "0"){
+        document.getElementById("start-earning-money").remove();
+      }
     }
   });
 </script>

@@ -64,7 +64,7 @@
             <div class="tile tile-centered">
               <div class="tile-icon">
                 <div class="example-tile-icon">
-                  <img id="modal-user-creation-avatar" src="https://lootl.ml/img/lootl.png" style="background-color: #ededed;" width="32px"> 
+                  <img id="modal-user-creation-avatar" src="https://lootl.ml/img/lootl.png" style="background-color: #ededed;" width="64px"> 
                 </div>
               </div>
               <div class="tile-content">
@@ -114,6 +114,6 @@
   function create_user_create(){
     location.href = "https://lootl.ml#modal-user-creation";
     document.getElementById("modal-user-creation-avatar").src = document.getElementById("create-user-avatar").value;
-    document.getElementById("modal-user-creation-username").src = document.getElementById("create-user-username").value;
+    document.getElementById("modal-user-creation-username").innerHTML = document.getElementById("create-user-username").value;
   }
 </script>

@@ -14,6 +14,10 @@
   </header>
   
   <main>
+    <div class="toast toast-error skeleton">
+      <h6>Disclaimer</h6>
+      <p>This website is in construction, please don't use this website until this disclaimer is gone.</p>
+    </div>
     <div class="toast toast-error">
       <h6>Disclaimer</h6>
       <p>This website is in construction, please don't use this website until this disclaimer is gone.</p>
@@ -24,3 +28,32 @@
     </center>
   </main>
 </body>
+<style>
+  .skeleton {
+    box-shadow: 0 4px 10px 0 rgba(33, 33, 33, 0.15);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden; 
+  }
+  
+  skeleton-loading::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -150px;
+    top: 0;
+    height: 100%;
+    width: 150px;
+    background: linear-gradient(to right, transparent 0%, #E8E8E8 50%, transparent 100%);
+    animation: load-skeleton 1s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+  
+  @keyframes load-skeleton {
+    from {
+      left: -150px;
+    }
+    to   {
+      left: 100%;
+    }
+  }
+</style>

@@ -36,6 +36,8 @@
               </div>
             </li>
             <li class="divider"></li>
+            <p style="margin-top: 30px; margin-left: 15px"><b>$ </b><span id="navbar-menu-money">0</span></p>
+            <li class="divider"></li>
             <li class="menu-item c-hand"><a href="https://lootl.ml/me/inventory">My inventory</a></li>
             <li class="menu-item c-hand"><a href="https://lootl.ml/me/settings">Settings</a></li>
           </ul>
@@ -133,6 +135,10 @@
       document.getElementById("create-user").remove();
     } else {
       document.getElementById("navbar-user").remove();
+    }
+    
+    if (localStorage.getItem("money")){
+      document.getElementById("navbar-menu-money").innerHTML = localStorage.getItem("money");
     }
   });
 </script>

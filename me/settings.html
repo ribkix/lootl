@@ -1,1 +1,70 @@
-
+<html>
+  <head>
+    <title>Settings | LootL</title>
+    <link rel="stylesheet" href="https://lootl.ml/css/spectre.min.css">
+    <link rel="stylesheet" href="https://lootl.ml/css/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://lootl.ml/css/spectre-icons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Are you blind? You can't even read the title of this page. Wow, go to an ophthalmologist.">
+    <meta name="keywords" content="gamble,casino,lootbox,loot,lootl,account,user,settings,change">
+    <meta property="og:image" content="https://lootl.ml/img/lootl.png">
+    <meta name="theme-color" content="#00AAFF">
+    <link id="favicon" rel="icon" href="https://lootl.ml/img/lootl.png">
+    <script type="text/javascript" src="https://lootl.ml/js/jquery-3.5.1.js"></script>
+  </head>
+</html>
+<body>
+  <header class="navbar">
+    <section class="navbar-section">
+      <a href="https://lootl.ml" class="navbar-brand mr-2"><img src="https://lootl.ml/img/lootl.png" width="50px"></a>
+    </section>
+    <section class="navbar-section" id="navbar-user">
+      <div class="popover popover-bottom">
+        <a class="c-hand" style="color: #000; margin-right: 10px; text-decoration: none;" id="navbar-username">Welcome, User!</a>
+        <a class="c-hand" style="margin-right: 10px;">
+          <figure class="avatar avatar-lg">
+            <img style="background-color: #ededed;" id="navbar-avatar" src="https://lootl.ml/img/lootl.png" alt="https://lootl.ml/lootl.png">
+          </figure>
+        </a>
+        <div class="popover-container">
+          <ul class="menu">
+            <li class="menu-item">
+              <div class="tile tile-centered">
+                <div class="tile-icon"><img id="navbar-menu-avatar" class="avatar" src="https://lootl.ml/img/lootl.png" style="background-color: #ededed;"></div>
+                <div class="tile-content" id="navbar-menu-username">User</div>
+              </div>
+            </li>
+            <li class="divider"></li>
+            <li class="menu-item c-hand"><a href="https://lootl.ml/me/inventory">My inventory</a></li>
+            <li class="menu-item c-hand"><a class="active" href="https://lootl.ml/me/settings">Settings</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </header>
+  
+  <main>
+    <div class="toast toast-error">
+      <h6>Disclaimer</h6>
+      <p>This website is in construction, please don't use this website until this disclaimer is gone.</p>
+    </div>
+    
+    <center>
+      
+    </center>
+  </main>
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    if (localStorage.getItem("username") && localStorage.getItem("avatar")){
+      document.getElementById("navbar-username").innerHTML = localStorage.getItem("username");
+      document.getElementById("navbar-avatar").src = localStorage.getItem("avatar");
+      document.getElementById("navbar-menu-username").innerHTML = localStorage.getItem("username");
+      document.getElementById("navbar-menu-avatar").src = localStorage.getItem("avatar");
+      document.getElementById("favicon").href = localStorage.getItem("avatar");
+    } else {
+      location.href = "https://lootl.ml";
+    }
+  });
+</script>

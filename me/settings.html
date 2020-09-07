@@ -50,11 +50,55 @@
       <p>This website is in construction, please don't use this website until this disclaimer is gone.</p>
     </div>
     
+    <div class="modal modal-sm" id="modal-edit-username">
+      <a href="#close" class="modal-overlay" aria-label="Close"></a>
+      <div class="modal-container">
+        <div class="modal-header">
+          <a href="#close" class="btn btn-clear float-right" aria-label="Close"></a>
+          <div class="modal-title h5">Edit username</div>
+        </div>
+        <div class="modal-body">
+          <div class="content">
+            <div class="form-group">
+              <label class="form-label" for="edit-username-username">New username</label>
+              <input class="form-input" type="text" id="edit-username-username" placeholder="Username">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" style="background: #32b643; border-color: #32b643;" onclick="modal_edit_username_edit();">Edit</button>
+          <a class="btn btn-link" style="color: #e85600;" href="#close">Cancel</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal modal-sm" id="modal-edit-avatar">
+      <a href="#close" class="modal-overlay" aria-label="Close"></a>
+      <div class="modal-container">
+        <div class="modal-header">
+          <a href="#close" class="btn btn-clear float-right" aria-label="Close"></a>
+          <div class="modal-title h5">Edit avatar</div>
+        </div>
+        <div class="modal-body">
+          <div class="content">
+            <div class="form-group">
+              <label class="form-label" for="edit-avatar-avatar">New avatar</label>
+              <input class="form-input" type="url" id="edit-avatar-avatar" placeholder="URL">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" style="background: #32b643; border-color: #32b643;" onclick="modal_edit_avatar_edit();">Edit</button>
+          <a class="btn btn-link" style="color: #e85600;" href="#close">Cancel</a>
+        </div>
+      </div>
+    </div>
+    
     <center>
       <br>
       <div class="panel">
         <div class="panel-header text-center">
-          <figure class="avatar avatar-lg"><img id="user-panel-avatar" src="https://https://lootl.ml/img/lootl.png"></figure>
+          <figure class="avatar avatar-lg"><img id="user-panel-avatar" src="https://lootl.ml/img/lootl.png" style="background-color: #ededed;"></figure>
           <div id="user-panel-username" class="panel-title h5 mt-10">User</div>
         </div>
         <nav class="panel-nav">
@@ -70,17 +114,17 @@
               <div class="tile-subtitle" id="user-panel-profile-username">User</div>
             </div>
             <div class="tile-action">
-              <button class="btn btn-link btn-action btn-lg tooltip tooltip-left" data-tooltip="Edit username"><i class="icon icon-edit" style="color: #00aaff;"></i></button>
+              <a href="#modal-edit-username" class="btn btn-link btn-action btn-lg tooltip tooltip-left" data-tooltip="Edit username"><i class="icon icon-edit" style="color: #00aaff;"></i></a>
             </div>
           </div>
           <br>
           <div class="tile tile-centered">
             <div class="tile-content">
               <div class="tile-title text-bold">Avatar</div>
-              <div class="tile-subtitle" id="user-panel-profile-avatar">https://https://lootl.ml/img/lootl.png</div>
+              <div class="tile-subtitle" id="user-panel-profile-avatar">https://lootl.ml/img/lootl.png</div>
             </div>
             <div class="tile-action">
-              <button class="btn btn-link btn-action btn-lg tooltip tooltip-left" data-tooltip="Edit avatar"><i class="icon icon-edit"></i></button>
+              <a href="#modal-edit-avatar" class="btn btn-link btn-action btn-lg tooltip tooltip-left" data-tooltip="Edit avatar"><i class="icon icon-edit" style="color; #00aaff;"></i></a>
             </div>
           </div>
         </div>
@@ -92,6 +136,16 @@
   </main>
 </body>
 <script>
+  function modal_edit_username_edit(){
+    document.getElementById("user-panel-username").innerHTML = document.getElementById("edit-username-username").value;
+    document.getElementById("user-panel-profile-username").innerHTML = document.getElementById("edit-username-username").value;
+  }
+  
+  function modal_edit_avatar_edit(){
+    document.getElementById("user-panel-avatar").src = document.getElementById("edit-avatar-avatar").value;
+    document.getElementById("user-panel-profile-avatar").innerHTML = document.getElementById("edit-avatar-avatar").value;
+  }
+  
   document.addEventListener("DOMContentLoaded", function(){
     if (localStorage.getItem("username") && localStorage.getItem("avatar")){
       document.getElementById("navbar-username").innerHTML = localStorage.getItem("username");
@@ -102,6 +156,7 @@
       document.getElementById("user-panel-avatar").src = localStorage.getItem("avatar");
       document.getElementById("user-panel-profile-username").innerHTML = localStorage.getItem("username");
       document.getElementById("user-panel-profile-avatar").innerHTML = localStorage.getItem("avatar");
+      document.getElementById("edit-avatar-avatar").value = localStorage.getItem("avatar");
       document.getElementById("favicon").href = localStorage.getItem("avatar");
     } else {
       location.href = "https://lootl.ml";

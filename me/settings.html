@@ -51,7 +51,41 @@
     </div>
     
     <center>
-      
+      <div class="panel">
+        <div class="panel-header text-center">
+          <figure class="avatar avatar-lg"><img id="user-panel-avatar" src="https://https://lootl.ml/img/lootl.png"></figure>
+          <div id="user-panel-username" class="panel-title h5 mt-10">User</div>
+        </div>
+        <nav class="panel-nav">
+          <ul class="tab tab-block">
+            <li class="tab-item active"><a href="#profile">Profile</a></li>
+            <li class="tab-item"><a href="#manage">Manage</a></li>
+          </ul>
+        </nav>
+        <div class="panel-body">
+          <div class="tile tile-centered">
+            <div class="tile-content">
+              <div class="tile-title text-bold">Username</div>
+              <div class="tile-subtitle" id="user-panel-profile-username">User</div>
+            </div>
+            <div class="tile-action">
+              <button class="btn btn-link btn-action btn-lg tooltip tooltip-left" data-tooltip="Edit E-mail"><i class="icon icon-edit"></i></button>
+            </div>
+          </div>
+          <div class="tile tile-centered">
+            <div class="tile-content">
+              <div class="tile-title text-bold">Avatar</div>
+              <div class="tile-subtitle" id="user-panel-profile-avatar">https://https://lootl.ml/img/lootl.png</div>
+            </div>
+            <div class="tile-action">
+              <button class="btn btn-link btn-action btn-lg"><i class="icon icon-edit"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <button class="btn btn-primary btn-block" style="background: #00aaff; border-color: #00aaff;">Save</button>
+        </div>
+      </div>
     </center>
   </main>
 </body>
@@ -62,6 +96,10 @@
       document.getElementById("navbar-avatar").src = localStorage.getItem("avatar");
       document.getElementById("navbar-menu-username").innerHTML = localStorage.getItem("username");
       document.getElementById("navbar-menu-avatar").src = localStorage.getItem("avatar");
+      document.getElementById("user-panel-username").innerHTML = localStorage.getItem("username");
+      document.getElementById("user-panel-avatar").src = localStorage.getItem("avatar");
+      document.getElementById("user-panel-profile-username").innerHTML = localStorage.getItem("username");
+      document.getElementById("user-panel-profile-avatar").innerHTML = localStorage.getItem("avatar");
       document.getElementById("favicon").href = localStorage.getItem("avatar");
     } else {
       location.href = "https://lootl.ml";

@@ -129,19 +129,26 @@
           </div>
         </div>
         <div class="panel-footer">
-          <button class="btn btn-primary btn-block" style="background: #00aaff; border-color: #00aaff;">Save</button>
+          <button class="btn btn-primary btn-block" style="background: #00aaff; border-color: #00aaff;" onclick="save_settings();">Save</button>
         </div>
       </div>
     </center>
   </main>
 </body>
 <script>
+  function save_settings(){
+    localStorage.setItem("username", document.getElementById("user-panel-username").innerHTML);
+    localStorage.setItem("avatar", document.getElementById("user-panel-avatar").innerHTML);
+  }
+  
   function modal_edit_username_edit(){
+    location.href = "https://lootl.ml/me/settings#close";
     document.getElementById("user-panel-username").innerHTML = document.getElementById("edit-username-username").value;
     document.getElementById("user-panel-profile-username").innerHTML = document.getElementById("edit-username-username").value;
   }
   
   function modal_edit_avatar_edit(){
+    location.href = "https://lootl.ml/me/settings#close";
     document.getElementById("user-panel-avatar").src = document.getElementById("edit-avatar-avatar").value;
     document.getElementById("user-panel-profile-avatar").innerHTML = document.getElementById("edit-avatar-avatar").value;
   }

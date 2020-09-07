@@ -124,12 +124,12 @@
               <div class="tile-subtitle" id="user-panel-profile-avatar">https://lootl.ml/img/lootl.png</div>
             </div>
             <div class="tile-action">
-              <a href="#modal-edit-avatar" class="btn btn-link btn-action btn-lg tooltip tooltip-left" data-tooltip="Edit avatar"><i class="icon icon-edit" style="color; #00aaff;"></i></a>
+              <a href="#modal-edit-avatar" class="btn btn-link btn-action btn-lg tooltip tooltip-left" data-tooltip="Edit avatar"><i class="icon icon-edit" style="color: #00aaff;"></i></a>
             </div>
           </div>
         </div>
         <div class="panel-footer">
-          <button class="btn btn-primary btn-block" style="background: #00aaff; border-color: #00aaff;" onclick="save_settings();">Save</button>
+          <button id="save-settings" class="btn btn-primary btn-block" style="background: #00aaff; border-color: #00aaff;" onclick="save_settings();">Save</button>
         </div>
       </div>
     </center>
@@ -139,6 +139,10 @@
   function save_settings(){
     localStorage.setItem("username", document.getElementById("user-panel-profile-username").innerHTML);
     localStorage.setItem("avatar", document.getElementById("user-panel-profile-avatar").innerHTML);
+    document.getElementById("save-settings").classList.add("loading");
+    setTimeout(function() {
+      document.getElementById("save-settings").classList.remove("loading");
+    }, 1);
   }
   
   function modal_edit_username_edit(){

@@ -145,13 +145,13 @@
   
   document.addEventListener("DOMContentLoaded", function(){
     if (localStorage.getItem("username") && localStorage.getItem("avatar")){
-      document.getElementById("start-earning-money").remove();
       document.getElementById("navbar-username").innerHTML = localStorage.getItem("username");
       document.getElementById("navbar-avatar").src = localStorage.getItem("avatar");
       document.getElementById("navbar-menu-username").innerHTML = localStorage.getItem("username");
       document.getElementById("navbar-menu-avatar").src = localStorage.getItem("avatar");
       document.getElementById("create-user").remove();
     } else {
+      document.getElementById("start-earning-money").remove();
       document.getElementById("navbar-user").remove();
     }
     

@@ -4,12 +4,28 @@
     <link rel="stylesheet" href="https://lootl.ml/css/spectre.min.css">
     <link rel="stylesheet" href="https://lootl.ml/css/spectre-exp.min.css">
     <link rel="stylesheet" href="https://lootl.ml/css/spectre-icons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gamble existing items without real money.">
+    <meta name="keywords" content="gamble,casino,lootbox,loot,lootl">
+    <meta property="og:image" content="https://lootl.ml/img/lootl.png">
+    <meta name="theme-color" content="#00AAFF">
+    <link rel="icon" href="https://lootl.ml/img/lootl.png">
+    <script type="text/javascript" src="https://lootl.ml/js/jquery-3.5.1.js"></script>
   </head>
 </html>
 <body>
   <header class="navbar">
     <section class="navbar-section">
-      <a href="https://lootl.ml" class="navbar-brand mr-2"><img src="http://lootl.ml/img/lootl.png" width="50px"></a>
+      <a href="https://lootl.ml" class="navbar-brand mr-2"><img src="https://lootl.ml/img/lootl.png" width="50px"></a>
+    </section>
+    <section class="navbar-section">
+      <div class="input-inline">
+        <p id="navbar-username">Welcome, user!</p>
+        <figure class="avatar avatar-lg">
+          <img id="navbar-avatar" src="https://lootl.ml/img/lootl.png" alt="https://lootl.ml/lootl.png">
+        </figure>
+      </div>
     </section>
   </header>
   
@@ -24,9 +40,13 @@
       <div id="create-user">
         <h1>We see you haven't created a user yet!</h1>
         <p>That's okay, but you need it to play. Create one:</p>
-        <div class="viewer-360">
-          <input class="viewer-slider slider" type="range" min="1" max="4" value="1" oninput="this.setAttribute('value', this.value);">
-          <figure class="viewer-image" style="background-image:url('https://lootl.ml/img/items/geforce-2080-ti/3D.jpg');"></figure>
+        <div class="form-group">
+          <label class="form-label" for="create-user-username">Username</label>
+          <input class="form-input" type="text" id="create-user-username" placeholder="Username">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="create-user-avatar">Avatar</label>
+          <input class="form-input" id="create-user-avatar" type="url" placeholder="URL" value="https://lootl.ml/img/lootl.png">
         </div>
       </div>
     </center>

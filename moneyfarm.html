@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>404 | LootL</title>
+    <title>Money Farm | LootL</title>
     <link rel="stylesheet" href="https://lootl.ml/css/spectre.min.css">
     <link rel="stylesheet" href="https://lootl.ml/css/spectre-exp.min.css">
     <link rel="stylesheet" href="https://lootl.ml/css/spectre-icons.min.css">
@@ -49,12 +49,25 @@
     <center>
       <br>
       <h1>Money Farm</h1>
-      <p>You will earn $5 per minute, you will earn $0.01 per click of the below button.</p>
-      <button class="btn btn-primary" style="background: #00aaff; border-color: #00aaff;">Earn</button>
+      <p>You will earn $5 per minute, you will earn $1 per click of the below button.</p>
+      <button class="btn btn-primary" style="background: #00aaff; border-color: #00aaff;" onclick="addMoney();">Earn</button>
+      <br>
+      <p>You have earned <b>$</b><span id="money-earned">0</span> during this session.</p>
+      <p>You have <b>$</b><span id="money-total">0</span> in total.</p>
     </center>
   </main>
 </body>
 <script>
+  var moneyEarned = 0;
+  var moneyTotal = "0";
+  var moneyTotalInt = 0;
+  
+  function addMoney(){
+    moneyTotalInt += 1;
+    moneyTotal = moneyTotalInt.toString();
+    localStorage.setItem("money",moneyTotal);
+  }
+  
   document.addEventListener("DOMContentLoaded", function(){
     if (localStorage.getItem("username") && localStorage.getItem("avatar")){
       document.getElementById("navbar-username").innerHTML = localStorage.getItem("username");
@@ -66,10 +79,18 @@
     }
     
     if (localStorage.getItem("money")){
+      moneyTotal = localStorage.getItem("money");
+      moneyTotalInt = parseInt(moneyTotal);
       document.getElementById("navbar-menu-money").innerHTML = localStorage.getItem("money");
       if (localStorage.getItem("money") != "0"){
         document.getElementById("start-earning-money").remove();
       }
     }
   });
+  
+  setInterval(function(){
+    moneyTotalInt += 5;
+    moneyTotal = moneyTotalInt.toString();
+    localStorage.setItem("money",moneyTotal);
+  }, 60000);
 </script>

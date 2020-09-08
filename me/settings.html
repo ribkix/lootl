@@ -188,8 +188,8 @@
     document.getElementById("save-settings").classList.add("loading");
     setTimeout(function() {
       document.getElementById("save-settings").classList.remove("loading");
+      M.toast({html: 'Saved your settings'});
     }, 1000);
-    M.toast({html: 'Saved your settings'})
   }
   
   function modal_delete_user(){

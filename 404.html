@@ -56,28 +56,13 @@
   </main>
 </body>
 <script>
-  function create_user_create(){
-    location.href = "https://lootl.ml#modal-user-creation";
-    document.getElementById("modal-user-creation-avatar").src = document.getElementById("create-user-avatar").value;
-    document.getElementById("modal-user-creation-username").innerHTML = document.getElementById("create-user-username").value;
-  }
-  
-  function modal_user_creation_create(){
-    location.href = "https://lootl.ml#close";
-    localStorage.setItem("username", document.getElementById("create-user-username").value);
-    localStorage.setItem("avatar", document.getElementById("create-user-avatar").value);
-    location.reload();
-  }
-  
   document.addEventListener("DOMContentLoaded", function(){
     if (localStorage.getItem("username") && localStorage.getItem("avatar")){
       document.getElementById("navbar-username").innerHTML = localStorage.getItem("username");
       document.getElementById("navbar-avatar").src = localStorage.getItem("avatar");
       document.getElementById("navbar-menu-username").innerHTML = localStorage.getItem("username");
       document.getElementById("navbar-menu-avatar").src = localStorage.getItem("avatar");
-      document.getElementById("create-user").remove();
     } else {
-      document.getElementById("start-earning-money").remove();
       document.getElementById("navbar-user").remove();
     }
     

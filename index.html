@@ -84,6 +84,22 @@
     
     <center>
       <br>
+      <div class="container" id="dashboard">
+        <div class="columns">
+          <div class="column col-12">
+            <div class="empty">
+              <div class="empty-icon">
+                <i class="icon icon-3x icon-emoji"></i>
+              </div>
+              <p class="empty-title h5">Earn money the easy but boring way.</p>
+              <p class="empty-subtitle">Go to the "Money Farm" for a very boring but easy and effective way of earning money.</p>
+              <div class="empty-action">
+              <a class="btn btn-primary" style="background: #00aaff; border-color: #00aaff;" href="https://lootl.ml/moneyfarm">Start</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
       <div class="container">
         <div class="columns">
           <div class="column col-12">
@@ -159,7 +175,11 @@
       document.getElementById("navbar-menu-money").innerHTML = localStorage.getItem("money");
       if (localStorage.getItem("money") != "0"){
         document.getElementById("start-earning-money").remove();
+      } else {
+        document.getElementById("dashboard").remove();
       }
+    } else {
+      document.getElementById("dashboard").remove();
     }
   });
 </script>

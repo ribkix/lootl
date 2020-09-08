@@ -68,6 +68,7 @@
     moneyTotalInt += 1;
     moneyTotal = moneyTotalInt.toString();
     localStorage.setItem("money",moneyTotal);
+    document.getElementById("navbar-menu-money").innerHTML = moneyTotal;
     document.getElementById("money-total").innerHTML = moneyTotal;
     document.getElementById("money-earned").innerHTML = moneyEarned.toString();
   }
@@ -96,6 +97,7 @@
     moneyTotalInt += 1;
     moneyTotal = moneyTotalInt.toString();
     localStorage.setItem("money",moneyTotal);
+    document.getElementById("navbar-menu-money").innerHTML = moneyTotal;
     document.getElementById("money-total").innerHTML = moneyTotal;
     document.getElementById("money-earned").innerHTML = moneyEarned.toString();
   }, 60000);

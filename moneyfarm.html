@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="https://lootl.ml/css/spectre-icons.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hehe you found me.">
+    <meta name="description" content="Earn money on Lootl.">
+    <meta name="keywords" content="gamble,casino,lootbox,loot,lootl">
     <meta property="og:image" content="https://lootl.ml/img/lootl.png">
     <meta name="theme-color" content="#00AAFF">
     <link rel="icon" href="https://lootl.ml/img/lootl.png">
@@ -58,7 +59,7 @@
   </main>
 </body>
 <script>
-  var moneyEarned = 0;
+  var moneyEarned = "0";
   var moneyTotal = "0";
   var moneyTotalInt = 0;
   
@@ -66,6 +67,8 @@
     moneyTotalInt += 1;
     moneyTotal = moneyTotalInt.toString();
     localStorage.setItem("money",moneyTotal);
+    document.getElementById("money-total").innerHTML = moneyTotal;
+    document.getElementById("money-earned").innerHTML = moneyEarned.toString();
   }
   
   document.addEventListener("DOMContentLoaded", function(){
@@ -89,8 +92,11 @@
   });
   
   setInterval(function(){
+    moneyEarned += 5;
     moneyTotalInt += 5;
     moneyTotal = moneyTotalInt.toString();
     localStorage.setItem("money",moneyTotal);
+    document.getElementById("money-total").innerHTML = moneyTotal;
+    document.getElementById("money-earned").innerHTML = moneyEarned.toString();
   }, 60000);
 </script>

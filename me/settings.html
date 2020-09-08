@@ -214,8 +214,10 @@
     if (document.getElementById("delete-user-repeat-delete").value == "DELETE"){
       localStorage.getItem("username");
       localStorage.getItem("avatar");
+      localStorage.getItem("money");
       localStorage.removeItem("username");
       localStorage.removeItem("avatar");
+      localStorage.removeItem("money");
       location.href = "https://lootl.ml/";
     } else {
       location.href = "https://lootl.ml/me/settings#modal-delete-user-failed";

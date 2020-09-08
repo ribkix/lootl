@@ -59,11 +59,12 @@
   </main>
 </body>
 <script>
-  var moneyEarned = "0";
+  var moneyEarned = 0;
   var moneyTotal = "0";
   var moneyTotalInt = 0;
   
   function addMoney(){
+    moneyEarned += 1;
     moneyTotalInt += 1;
     moneyTotal = moneyTotalInt.toString();
     localStorage.setItem("money",moneyTotal);
@@ -79,20 +80,18 @@
       document.getElementById("navbar-menu-avatar").src = localStorage.getItem("avatar");
     } else {
       document.getElementById("navbar-user").remove();
+      location.href = "https://lootl.ml";
     }
     
     if (localStorage.getItem("money")){
       moneyTotal = localStorage.getItem("money");
       moneyTotalInt = parseInt(moneyTotal);
       document.getElementById("navbar-menu-money").innerHTML = localStorage.getItem("money");
-      if (localStorage.getItem("money") != "0"){
-        document.getElementById("start-earning-money").remove();
-      }
     }
   });
   
   setInterval(function(){
-    moneyEarned += 5;
+    moneyEarned += 1;
     moneyTotalInt += 5;
     moneyTotal = moneyTotalInt.toString();
     localStorage.setItem("money",moneyTotal);

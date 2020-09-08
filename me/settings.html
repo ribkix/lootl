@@ -102,6 +102,29 @@
           </div>
         </div>
         <div class="modal-footer">
+          <a class="btn btn-error" href="#modal-delete-user-repeat">Delete</a>
+          <a class="btn btn-link" style="color: #00aaff;" href="#close">Cancel</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal modal-sm" id="modal-delete-user-repeat">
+      <a href="#close" class="modal-overlay" aria-label="Close"></a>
+      <div class="modal-container">
+        <div class="modal-header">
+          <a href="#close" class="btn btn-clear float-right" aria-label="Close"></a>
+          <div class="modal-title h5">Are you sure you want to delete your user?</div>
+        </div>
+        <div class="modal-body">
+          <div class="content">
+            <p>Please type "DELETE" in the textbox below. There will be <u>no way</u> to revert your progress!</p>
+            <div class="form-group">
+              <label class="form-label" for="delete-user-repeat-delete">Delete user</label>
+              <input class="form-input" type="text" id="delete-user-repeat-delete" placeholder="DELETE">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
           <button class="btn btn-error" onclick="modal_delete_user();">Delete</button>
           <a class="btn btn-link" style="color: #00aaff;" href="#close">Cancel</a>
         </div>
@@ -167,11 +190,15 @@
   }
   
   function modal_delete_user(){
-    localStorage.getItem("username");
-    localStorage.getItem("avatar");
-    localStorage.removeItem("username");
-    localStorage.removeItem("avatar");
-    location.href = "https://lootl.ml/";
+    if (document.getElementById("delete-user-repeat-delete").value = "DELETE"){
+      localStorage.getItem("username");
+      localStorage.getItem("avatar");
+      localStorage.removeItem("username");
+      localStorage.removeItem("avatar");
+      location.href = "https://lootl.ml/";
+    } else {
+      location.href = "https://lootl.ml/me/settings#close";
+    }
   }
   
   function modal_edit_username_edit(){
